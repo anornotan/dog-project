@@ -1,13 +1,15 @@
 [//]: # (Image References)
 
-[image1]: ./images/sample_dog_output.png "Sample Output"
+
 [image2]: ./images/vgg16_model.png "VGG-16 Model Keras Layers"
 [image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
 ## Project Overview
 
-In this project I implemented a CNN with AWS GPU to, given an image of either a dog or a human, classify the most resembling dog breed among 118 available breeds. I used two pre-trained models `ResNet-50` to detect dogs and `OpenCV-CascadeClassifier` to detect humans. 
+In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN with AWS GPU to, given an image of either a dog or a human, classify the most resembling dog breed among 118 available breeds. I used two pre-trained models `ResNet-50` to detect dogs and `OpenCV-CascadeClassifier` to detect humans. 
 
-![Sample Output][image1]
+<p align="center">
+	<img src="./images/sample_dog_output.png" height="30%" width="30%">
+</p>
 
 Steps I took to run the Jupyter notebook on GPU on AWS:
 - Create an EC2 instance in which I selected the `Ubuntu x64 with Tensorflow` as my AMI by following this [tutorial](https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4f90364e49ac).
@@ -40,7 +42,7 @@ jupyter notebook --ip=0.0.0.0 --no-browser
 ```
 
 
-
+<!-- 
 ## Suggestions to Make your Project Stand Out!
 
 (Presented in no particular order ...)
@@ -63,4 +65,4 @@ Currently, if a dog appears 51% German Shephard and 49% poodle, only the German 
 
 #### (5) Experiment with Multiple Dog/Human Detectors
 
-Perform a systematic evaluation of various methods for detecting humans and dogs in images.  Provide improved methodology for the `face_detector` and `dog_detector` functions.
+Perform a systematic evaluation of various methods for detecting humans and dogs in images.  Provide improved methodology for the `face_detector` and `dog_detector` functions. -->
