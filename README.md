@@ -1,14 +1,13 @@
 [//]: # (Image References)
 
-
 [image2]: ./images/vgg16_model.png "VGG-16 Model Keras Layers"
 [image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
 ## Project Overview
 
-In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN with AWS GPU to, given an image of either a dog or a human, classify the most resembling dog breed among 118 available breeds. I used two pre-trained models `ResNet-50` to detect dogs and `OpenCV-CascadeClassifier` to detect humans. 
+In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN with AWS GPU to classify dog breeds or the most resembling dog breed among 133 available breeds when given as input an image of either a dog or a human. I used two pre-trained models `ResNet-50` to detect dogs and `OpenCV-CascadeClassifier` to detect human faces. In addtion, by extracting the VGG16 and Xception bottleneck features, I also leveraged transfer learning to speed up my training process without sacrificing accuracy (??? text accuracy).
 
 <p align="center">
-	<img src="./images/sample_dog_output.png" height="30%" width="30%">
+	<img src="./images/myDog.png" height="30%" width="30%">
 </p>
 
 Steps I took to run the Jupyter notebook on GPU on AWS:
@@ -17,7 +16,7 @@ Steps I took to run the Jupyter notebook on GPU on AWS:
 ```sh
 ## cd to the folder containing privateKey.pem and the folder I want to upload 
 ## 
-scp -i privateKey.pem -r folderToUpload  ubuntu@Public_DNS_(IPv4)
+scp -i privateKey.pem -r folderToUpload  ubuntu@Public_DNS_(IPv4):~
 ## replace ubuntu with ec2-user for Windows/OS
 ``` 
 - To run Jupyter Notebook, first ssh to the instance. You can find more details in these [videos](https://www.youtube.com/watch?v=XJnpl7mQBIw).
@@ -27,13 +26,17 @@ ssh -i privateKey.pem ubuntu@Public_DNS(IPv4)
 git clone https://github.com/udacity/dog-project.git
 
 ## download the dog dataset
+mkdir dogImages
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
 
 ## download the human dataset
+mkdir images
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip
 
-## download the VGG-16 bottleneck features
+## download the VGG-16 and Xception bottleneck features
+mkdir bottleneck_features
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogVGG16Data.npz
+wget 
 ```
 - Then,
 ```sh
