@@ -1,14 +1,12 @@
-[//]: # (Image References)
-
-[image2]: ./images/vgg16_model.png "VGG-16 Model Keras Layers"
-[image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
 ## Project Overview
 
-In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN with AWS GPU to classify dog breeds or the most resembling dog breed among 133 available breeds when given as input an image of either a dog or a human. I used two pre-trained models `ResNet-50` to detect dogs and `OpenCV-CascadeClassifier` to detect human faces. In addtion, by extracting the VGG16 and Xception bottleneck features, I also leveraged transfer learning to speed up my training process without sacrificing accuracy.
+In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN with AWS GPU to classify dog breeds or the most resembling dog breed among 133 available breeds when given as input an image of either a dog or a human. I used two pre-trained models `ResNet-50` to detect dogs and `OpenCV-Harr Cascades` to detect human faces. In addtion, by extracting the VGG16 and Xception bottleneck features, I also leveraged transfer learning to speed up my training process without sacrificing accuracy (84% test accuracy).
 
 <p align="center">
 	<img src="images/predict-myDogs-breed.png" height="50%" width="50%">
 </p>
+
+Started code can be found [here](https://github.com/udacity/dog-project).
 
 Below are the **steps** I took to run the Jupyter notebook on GPU on AWS:
 - Create an EC2 instance in which I selected the `Ubuntu x64 with Tensorflow` as my AMI by following this [tutorial](https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4f90364e49ac).
@@ -27,16 +25,19 @@ git clone https://github.com/udacity/dog-project.git
 
 ## download the dog dataset
 mkdir dogImages
+cd dogImages
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip
 
 ## download the human dataset
-mkdir images
+mkdir lfw
+cd lfw
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip
 
 ## download the VGG-16 and Xception bottleneck features
 mkdir bottleneck_features
+cd bottleneck_features
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogVGG16Data.npz
-wget 
+wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogXceptionData.npz
 ```
 - Then,
 ```sh
