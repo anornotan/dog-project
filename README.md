@@ -6,7 +6,7 @@ In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN
 	<img src="images/predict-myDogs-breed.png" height="50%" width="50%">
 </p>
 
-Started code can be found [here](https://github.com/udacity/dog-project).
+Starter code can be found [here](https://github.com/udacity/dog-project).
 
 Below are the **steps** I took to run the Jupyter notebook on GPU on AWS:
 - Create an EC2 instance in which I selected the `Ubuntu x64 with Tensorflow` as my AMI by following this [tutorial](https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4f90364e49ac).
