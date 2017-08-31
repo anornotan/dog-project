@@ -8,7 +8,7 @@ In this project for the Udacity Machine Learning Nanodegree, I implemented a CNN
 
 Starter code can be found [here](https://github.com/udacity/dog-project).
 
-Below are the **steps** I took to run the Jupyter notebook on GPU on AWS:
+## Methodology
 - Create an EC2 instance in which I selected the `Ubuntu x64 with Tensorflow` as my AMI by following this [tutorial](https://hackernoon.com/keras-with-gpu-on-amazon-ec2-a-step-by-step-instruction-4f90364e49ac).
 - Use scp to transfer files to my instance
 ```sh
@@ -39,7 +39,7 @@ cd bottleneck_features
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogVGG16Data.npz
 wget https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogXceptionData.npz
 ```
-- Then,
+- To run the Jupyter notebook
 ```sh
 jupyter notebook --ip=0.0.0.0 --no-browser
 ### replace localhost with IPv4 Public IP in browser
